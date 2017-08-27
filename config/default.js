@@ -1,6 +1,6 @@
 module.exports = {
   testUrls: {
-    baseUrl: "https://onedrive.live.com",
+    baseUrl: "http://gmail.com",
   },
   root: process.cwd(),
 };

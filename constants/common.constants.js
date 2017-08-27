@@ -1,3 +1,9 @@
 module.exports = Object.freeze({
-  title: 'Files - OneDrive'
+  TITLE: {
+	  homepage: 'Gmail'
+	}
+	CREDENTIALS: {
+		login: 'best.automation.test@gmail.com',
+		password: 'test-PA$$'
+	}
 });
