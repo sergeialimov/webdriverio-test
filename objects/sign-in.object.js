@@ -1,7 +1,3 @@
-const config = require('config');
-const projectRoot = config.get('root');
-const commonConstants = require(`${projectRoot}/constants/common.constants`);
-
 module.exports = class SignIn {
   get emailInput() {
     return $('#identifierId');
@@ -12,7 +8,7 @@ module.exports = class SignIn {
   }
 
   get passwordInput() {
-		return browser.element("[name='password']");
+    return browser.element("[name='password']");
   }
 
   get passwordNextButton() {
