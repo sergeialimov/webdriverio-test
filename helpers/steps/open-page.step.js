@@ -5,9 +5,9 @@ const baseUrl = config.get('testUrls.baseUrl');
 const commonConstants = require(`${projectRoot}/constants/common.constants`);
 
 const openPage = module.exports = {
-		openHomePage: function() {
-			browser.url(baseUrl);
-    	const title = browser.getTitle();
-    	assert.equal(title, commonConstants.TITLE.homepage);
-	}
+  openHomePage: function() {
+    browser.url(baseUrl);
+    const title = browser.getTitle();
+    assert.equal(title, commonConstants.TITLE.homepage);
+  }
 }
