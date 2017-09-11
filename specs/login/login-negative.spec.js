@@ -1,4 +1,3 @@
-const assert = require('assert');
 const expect = require('chai').expect;
 const config = require('config');
 const projectRoot = config.get('root');
@@ -8,6 +7,7 @@ const autotestConstants = require(`${projectRoot}/constants/autotest.constants`)
 const signInPage = new (require(`${projectRoot}/objects/sign-in.object`));
 const inboxPage = new (require(`${projectRoot}/objects/inbox.object`));
 const openPageStep = require(`${projectRoot}/helpers/steps/open-page.step`);
+const warningWaiter = require(`${projectRoot}/helpers/warning-waiter`);
 
 describe('Login to Gmail', function() {
   it('should open baseurl', function() {
@@ -25,18 +25,7 @@ describe('Login to Gmail', function() {
     signInPage.emaillNextButton.click();
   });
 
-  it('should verify warning message', () => {
-    browser.pause(1000);
-    const result = browser.execute(function(wornings) {
-      let res = false;
-      for (var i = 0; i < wornings.length; i++) {
-        if (window.find(wornings[i])) {
-          res = true;
-          break;
-        }
-      }
-      return res;
-    }, commonConstants.WARNINGS_ACCOUNT);
-    expect(result.value).to.be.true;
+  it('should verify that account warning message appears', () => {
+    warningWaiter.waitForWarning(commonConstants.WARNINGS_ACCOUNT);
   });
 });
