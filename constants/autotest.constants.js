@@ -1,5 +1,5 @@
 module.exports = Object.freeze({
   TIME: {
-    element_enable_timeout: 5000,
+    element_enable_timeout: 9 * 1000,
   }
 });
