@@ -10,7 +10,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/**/*.js'
+        // './specs/**/*.js'
+        './specs/login/login-negative.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -61,7 +62,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'silent',
+    logLevel: 'verbose',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -161,6 +162,11 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+		before: function() {
+	    var chai = require('chai');
+	    global.expect = chai.expect;
+	    chai.Should();
+		}
     //
     /**
      * Hook that gets executed before the suite starts
