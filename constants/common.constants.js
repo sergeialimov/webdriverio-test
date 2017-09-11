@@ -14,7 +14,7 @@ module.exports = Object.freeze({
       password: 'incorrect-PA$$'
     }
   },
-  WORNINGS_ACCOUNT: [
+  WARNINGS_ACCOUNT: [
     'Couldn\'t find your Google Account',
     'Не удалось найти аккаунт Google'
   ]
