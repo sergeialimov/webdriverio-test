@@ -1,4 +1,3 @@
-const assert = require('assert');
 const config = require('config');
 const projectRoot = config.get('root');
 const defaultConfig = require(`${projectRoot}/config/default`);
