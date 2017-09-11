@@ -5,7 +5,17 @@ module.exports = Object.freeze({
 
   },
   CREDENTIALS: {
-    login: 'best.automation.test@gmail.com',
-    password: 'test-PA$$'
-  }
+    correct: {
+      login: 'best.automation.test@gmail.com',
+      password: 'test-PA$$'
+    },
+    incorrect: {
+      login: 'incorrect.email@gmail.com',
+      password: 'incorrect-PA$$'
+    }
+  },
+  WORNINGS_ACCOUNT: [
+    'Couldn\'t find your Google Account',
+    'Не удалось найти аккаунт Google'
+  ]
 });
