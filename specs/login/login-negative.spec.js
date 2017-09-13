@@ -5,7 +5,7 @@ const commonConstants = require(`${projectRoot}/constants/common.constants`);
 const autotestConstants = require(`${projectRoot}/constants/autotest.constants`);
 const signInPage = new (require(`${projectRoot}/objects/sign-in.object`));
 const openPageStep = require(`${projectRoot}/helpers/steps/open-page.step`);
-const warningWaiter = require(`${projectRoot}/helpers/warning-waiter`);
+const customWaiter = require(`${projectRoot}/helpers/custom-waiter`);
 const languageDetector = require(`${projectRoot}/helpers/language-detector`);
 const warningData = require(`${projectRoot}/data/warning.data`);
 
@@ -27,6 +27,6 @@ describe('Login to Gmail', function() {
 
   it('should verify that account warning message appears', () => {
     const language = languageDetector.detectLanguage();
-    warningWaiter.waitForWarning(warningData.ACCOUNT[language]);
+    customWaiter.waitAndCheckTextOnPage(warningData.ACCOUNT[language]);
   });
 });

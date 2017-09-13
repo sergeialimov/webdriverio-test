@@ -5,7 +5,7 @@ const commonConstants = require(`${projectRoot}/constants/common.constants`);
 const autotestConstants = require(`${projectRoot}/constants/autotest.constants`);
 
 module.exports = {
-  waitForWarning: function(warning) {
+  waitAndCheckTextOnPage: function(warning) {
     browser.waitUntil(function() {
       const result = browser.execute(function(warning) {
         return window.find(warning);
