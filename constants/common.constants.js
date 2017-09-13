@@ -10,12 +10,8 @@ module.exports = Object.freeze({
       password: 'test-PA$$'
     },
     incorrect: {
-      login: 'incorrect.email@gmail.com',
+      login: 'incor====rect.email',
       password: 'incorrect-PA$$'
     }
-  },
-  WARNINGS_ACCOUNT: [
-    'Couldn\'t find your Google Account',
-    'Не удалось найти аккаунт Google'
-  ]
+  }
 });

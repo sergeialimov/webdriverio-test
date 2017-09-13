@@ -6,6 +6,8 @@ const autotestConstants = require(`${projectRoot}/constants/autotest.constants`)
 const signInPage = new (require(`${projectRoot}/objects/sign-in.object`));
 const openPageStep = require(`${projectRoot}/helpers/steps/open-page.step`);
 const warningWaiter = require(`${projectRoot}/helpers/warning-waiter`);
+const languageDetector = require(`${projectRoot}/helpers/language-detector`);
+const warningData = require(`${projectRoot}/data/warning.data`);
 
 describe('Login to Gmail', function() {
   it('should open baseurl', function() {
@@ -15,7 +17,7 @@ describe('Login to Gmail', function() {
   it('should send email to input', () => {
     signInPage.emailInput.waitForEnabled(autotestConstants.TIME.element_enable_timeout);
     signInPage.emailInput.clearElement();
-    signInPage.emailInput.setValue('sehiufs');
+    signInPage.emailInput.setValue(commonConstants.CREDENTIALS.incorrect.login);
   });
 
   it('should click on Next button', () => {
@@ -24,6 +26,7 @@ describe('Login to Gmail', function() {
   });
 
   it('should verify that account warning message appears', () => {
-    warningWaiter.waitForWarning(commonConstants.WARNINGS_ACCOUNT);
+    const language = languageDetector.detectLanguage();
+    warningWaiter.waitForWarning(warningData.ACCOUNT[language]);
   });
 });
