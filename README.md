@@ -12,3 +12,7 @@ In negative test I faced the issue when there is no available css selectors to l
 I added a data file with elements on pages in different languages. Test detects current language and verify required texts.
 
 During development I used a board for tasks. It could be found [here](https://trello.com/b/xVmP2pDV/webdriverio-atom-test).
+
+## how to launch
+
+// TODO describe launch details
